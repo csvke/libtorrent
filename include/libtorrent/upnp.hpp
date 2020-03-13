@@ -42,6 +42,13 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "libtorrent/string_util.hpp"
 #include "libtorrent/aux_/portmap.hpp"
 #include "libtorrent/aux_/vector.hpp"
+#include "libtorrent/aux_/openssl.hpp" // for ssl::context
+
+#ifdef TORRENT_USE_OPENSSL
+#include "libtorrent/aux_/disable_warnings_push.hpp"
+#include <boost/asio/ssl/context.hpp>
+#include "libtorrent/aux_/disable_warnings_pop.hpp"
+#endif
 
 #include <memory>
 #include <functional>
@@ -361,6 +368,10 @@ private:
 	address_v4 m_listen_address;
 	address_v4 m_netmask;
 	std::string m_device;
+
+#ifdef TORRENT_USE_OPENSSL
+	ssl::context m_ssl_ctx;
+#endif
 };
 
 }

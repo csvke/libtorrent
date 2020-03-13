@@ -1,3 +1,4 @@
+	* support validation of HTTPS trackers
 	* deprecate the bittyrant choking algorithm
 	* add build option to disable streaming
 
