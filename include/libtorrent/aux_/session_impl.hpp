@@ -834,6 +834,7 @@ namespace aux {
 			void update_upload_rate();
 			void update_connections_limit();
 			void update_alert_mask();
+			void update_validate_https();
 
 			void trigger_auto_manage() override;
 
