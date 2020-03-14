@@ -1,3 +1,5 @@
+	* fix issues when configured to use a non-default choking algorithm
+	* improve rate-based choker
 	* deprecate the bittyrant choking algorithm
 	* add build option to disable streaming
 
